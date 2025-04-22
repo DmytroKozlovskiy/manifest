@@ -15,6 +15,7 @@ html {
   justify-content: space-between;
   list-style: none;
   height: 100px;
+  margin-top: 50px;
 
 
   h1 {
@@ -38,6 +39,16 @@ html {
       text-transform: uppercase;
 
     }
+  }
+
+  button {
+    margin-right: 50px;
+    margin-top: 5px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
   }
 }
 
@@ -201,7 +212,7 @@ footer .container {
   >div {
     display: flex;
     justify-content: space-between;
-    
+
     a {
       display: block;
     }
@@ -217,10 +228,11 @@ footer .container {
       height: 50px;
     }
   }
+
   p {
     text-align: center;
   }
-  
+
   h3 {
     font-family: var(--second-family);
     font-weight: 500;
@@ -231,3 +243,23 @@ footer .container {
   }
 }
 
+@media screen and (max-width: 1200px) {
+
+  .header .container {
+    max-width: unset;
+    padding: 0 34px;
+
+  }
+
+  .blog .container {
+    >div {
+      gap: 20px;
+
+      >* {
+        width: calc(50% - 10px);
+      }
+    }
+  }
+
+
+}
