@@ -10,13 +10,18 @@ html {
   color: var(--gray);
 }
 
-.header {
+.header .container {
   display: flex;
   justify-content: space-between;
   list-style: none;
   height: 100px;
   margin-top: 50px;
+  position: relative;
 
+
+  #burger, .burger {
+    display: none;
+  }
 
   h1 {
     font-family: var(--second-family);
@@ -52,6 +57,17 @@ html {
   }
 }
 
+
+
+.header .container .burger {
+  width: 34px;
+  height: 22px;
+  background-image:
+    repeating-linear-gradient(black 0, black 2px,
+      transparent 2px, transparent 10px);
+  cursor: pointer;
+}
+
 p {
   font-family: var(--font-family);
   font-weight: 400;
@@ -85,7 +101,7 @@ h3 {
 }
 
 body {
-  margin: 0px;
+  margin-left: -10px;
   width: 100%;
 }
 
@@ -136,10 +152,7 @@ img {
       height: 470px;
     }
   }
-
-
 }
-
 
 .posts .container {
 
@@ -230,7 +243,6 @@ footer .container {
 
     ul li:hover {
       background-color: gray;
-      
     }
   }
 
@@ -250,21 +262,96 @@ footer .container {
 
 @media screen and (max-width: 1200px) {
 
-  .header .container {
-    max-width: unset;
-    padding: 0 34px;
 
-  }
+  .header .container nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    width: 50px;
 
-  .blog .container {
-    >div {
-      gap: 20px;
+    .burger {
+      margin-right: 50px;
+    }
 
-      >* {
-        width: calc(50% - 10px);
-      }
+    ul {
+      margin-left: -113px;
+      background-color: white;
+    }
+
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin: -69px;
+      padding: 30px;
     }
   }
 
+  .search {
+    display: none;
+  }
+
+  .header .container .burger {
+    display: block;
+  }
+
+  #burger:checked+.burger+nav {
+    display: block;
+  }
+
+
+  #burger:checked+.burger {
+    background: none;
+    position: relative;
+  }
+
+  #burger:checked+.burger::before,
+  #burger:checked+.burger::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: black;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  #burger:checked+.burger::after {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+
+.posts .container {
+  ul {
+    display: unset;
+
+    li {
+      display: flex;
+
+      &:nth-child(2n) {
+        flex-direction: row-reverse;
+        img {
+          margin-left: 10px;
+          margin-right: 0; 
+        }
+      }
+    }
+
+    img {
+      margin-right: 10px;
+
+    }
+  }
+}
+
+
+
+
 
 }
+
+  
