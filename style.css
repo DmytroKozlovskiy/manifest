@@ -102,7 +102,7 @@ h3 {
 }
 
 body {
-  margin-left: -10px;
+
   width: 100%;
 }
 
@@ -197,11 +197,10 @@ img {
     height: 260px;
   }
 
-  button {
-    margin-top: 50px;
-    margin-left: 500px;
-    margin-bottom: 50px;
-    width: 180px;
+  >button {
+    display: block;
+    margin: auto;
+    width: max-content;
     height: 46px;
     background: gray;
     font-family: var(--font-family);
@@ -211,7 +210,9 @@ img {
     letter-spacing: 0.1em;
     color: #fff;
   }
+
 }
+
 
 .info .container {
   display: flex;
@@ -227,7 +228,6 @@ footer {
 }
 
 footer .container {
-
   >div {
     display: flex;
     justify-content: space-between;
@@ -264,11 +264,9 @@ footer .container {
     letter-spacing: 0.1em;
     color: #000;
   }
-
-
 }
 
-@media screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
 
 
   .header .container nav {
@@ -386,13 +384,49 @@ footer .container {
 
   footer .container {
     margin-left: 20px;
-      >div {
-        display: unset;
-        text-align: center;
-  
-        ul {
-          justify-content: center;
-        }
+
+    >div {
+      display: unset;
+      text-align: center;
+
+      ul {
+        justify-content: center;
       }
+    }
+  }
+}
+
+@media (max-width: 760px) {
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .blog .container {
+    >div {
+      display: unset;
+    }
+  }
+
+  .posts .container {
+    ul li {
+      display: unset;
+    }
+  }
+
+
+  .popular .container {
+    ul {
+      display: unset;
+    }
+
+    button {
+      margin-left: 250px;
+    }
+  }
+
+  .info .container > div:last-child  {
+    justify-self: start;
+    text-align: left;
     }
   }
