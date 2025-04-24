@@ -331,6 +331,7 @@ footer .container {
 
     li {
       display: flex;
+      margin-bottom: 10px;
 
       &:nth-child(2n) {
         flex-direction: row-reverse;
@@ -346,12 +347,21 @@ footer .container {
 
     }
   }
+  
 }
+.popular .container {
+  ul {
+    gap: 20px;
+  }
 
+  li {
+    width: calc(50% - 10px);
 
-
-
-
+    img {
+      width: 100%;
+    }
+  }
 }
 
   
+}
