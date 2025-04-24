@@ -19,7 +19,8 @@ html {
   position: relative;
 
 
-  #burger, .burger {
+  #burger,
+  .burger {
     display: none;
   }
 
@@ -221,7 +222,12 @@ img {
   width: 570px;
 }
 
+footer {
+  background-color: #F4F4F4;
+}
+
 footer .container {
+
   >div {
     display: flex;
     justify-content: space-between;
@@ -258,6 +264,8 @@ footer .container {
     letter-spacing: 0.1em;
     color: #000;
   }
+
+
 }
 
 @media screen and (max-width: 1200px) {
@@ -325,43 +333,66 @@ footer .container {
   }
 
 
-.posts .container {
-  ul {
-    display: unset;
+  .posts .container {
+    ul {
+      display: unset;
 
-    li {
-      display: flex;
-      margin-bottom: 10px;
+      li {
+        display: flex;
+        margin-bottom: 10px;
 
-      &:nth-child(2n) {
-        flex-direction: row-reverse;
-        img {
-          margin-left: 10px;
-          margin-right: 0; 
+        &:nth-child(2n) {
+          flex-direction: row-reverse;
+
+          img {
+            margin-left: 10px;
+            margin-right: 0;
+          }
         }
+      }
+
+      img {
+        margin-right: 10px;
+
       }
     }
 
-    img {
-      margin-right: 10px;
+  }
 
+  .popular .container {
+    ul {
+      gap: 20px;
+    }
+
+    li {
+      width: calc(50% - 10px);
+
+      img {
+        width: 100%;
+      }
     }
   }
-  
-}
-.popular .container {
-  ul {
-    gap: 20px;
-  }
 
-  li {
-    width: calc(50% - 10px);
+  .info .container {
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
 
-    img {
-      width: 100%;
+    > :last-child {
+      justify-self: end;
+      text-align: right;
     }
   }
-}
 
+  footer .container {
+    margin-left: 20px;
+      >div {
+        display: unset;
+        text-align: center;
   
-}
+        ul {
+          justify-content: center;
+        }
+      }
+    }
+  }
